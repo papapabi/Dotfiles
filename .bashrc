@@ -18,7 +18,7 @@ alias vless='vim -u /usr/share/vim/vim80/macros/less.vim'
 set -o vi
 
 # Colorize bash prompt
-GREEN="\[$(tput setaf 2)\]"
+GREEN="\[$(tput setaf 11)\]"
 RESET="\[$(tput sgr0)\]"
 PROMPT=$PS1
 
