@@ -80,14 +80,14 @@ modules-right = temperature cpu memory
 
 [module/backlight]
 type = internal/backlight
-card = intel_backlight
+card = intel_backlight 
 format = <ramp> <bar>
 
 ramp-0 = 
 ramp-1 = 
 ramp-2 = 
 
-bar-width = 10
+bar-width = 20
 bar-indicator = |
 bar-indicator-font = 3
 bar-indicator-foreground = #ff
@@ -227,9 +227,13 @@ headphone-soundcard = default
 
 ; Name of the master mixer
 ; Default: Master
-master-mixer = IEC958 
-mapping = true
-format-volume =  <label-volume>
+master-mixer = Master
+mapping = false 
+format-volume = <ramp-volume> <label-volume>
+label-muted =  (mute)
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
 
 [module/powermenu]
 type = custom/menu
