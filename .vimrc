@@ -4,6 +4,7 @@ colorscheme gruvbox
 " So airline can appear all the time
 set laststatus=2
 set number
+let g:airline_powerline_fonts = 1
 
 " For smarter tab lines
 " let g:airline#extensions#tabline#enabled = 1
