@@ -11,7 +11,7 @@ tray-maxsize = 16
 ; Enable pseudo transparency
 ; Will automatically be enabled if a fully transparent
 ; background color is defined using `tray-background`
-tray-transparent = false
+tray-transparent = false 
 
 ; Background color for the tray container
 ; By default the tray container will use the bar
@@ -322,7 +322,10 @@ mount-1 = /home
 interval = 600
 fixed-values = true
 spacing = 10
-label-mounted =  %percentage_used% %
+format-mounted = <label-mounted>
+format-unmounted = <label-unmounted>
+# label-mounted =  %percentage_used% %
+label-mounted = %mountpoint%: %used% used [%total%]
 label-unmounted = %mountpoint%: ∅
 
 [module/temperature]

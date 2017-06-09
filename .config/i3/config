@@ -150,8 +150,8 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Default windows, 2 pixel no title
-new_window pixel 2
+# Default windows 
+new_window pixel 2 
 new_float normal 
 # Add a bind to switch to default borders and title bar
 bindsym $mod+Shift+n border normal
@@ -177,6 +177,10 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym --release Print exec --no-startup-id maim -m 10 -u ~/Pictures/screenshots/$(date +%F)-maim.png 
 bindsym --release Shift+Print exec --no-startup-id  maim -s | xclip -selection clipboard -t image/png
 bindsym --release $mod+Shift+Print exec --no-startup-id maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+
+# class                 border  backgr. text    indicator child_border
+client.focused          #ff5555 #ff5555 #ffffff #ff5555   #ff5555
+
 # Start polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
