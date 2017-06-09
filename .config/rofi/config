@@ -6,4 +6,5 @@ rofi.color-urgent: argb:0000000, #ff5555, argb:0000000, #ff5555, #000000
 rofi.padding: 350 
 rofi.font: Hack 16
 rofi.separator-style: none
+rofi.hide-scrollbar: true
 rofi.fullscreen: true
