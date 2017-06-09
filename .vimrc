@@ -1,5 +1,6 @@
 syntax enable
 set background=dark
+colorscheme gruvbox
 " So airline can appear all the time
 set laststatus=2
 set number
@@ -14,6 +15,7 @@ call plug#begin('~/.vim/plugged')
 " This shorthand notation fetches http://github.com/X/Y
 " Plug 'X/Y'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'sheerun/vim-polyglot'
