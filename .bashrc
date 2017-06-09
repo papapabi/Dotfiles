@@ -35,3 +35,10 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 
 # Load rbenv automatically by appending
 eval "$(rbenv init -)"
+
+# Swaps two files
+function swap()         
+{
+    local TMPFILE=tmp.$$
+    mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE $2
+}
