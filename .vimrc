@@ -25,6 +25,11 @@ Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
+" Insert newline after cur line by pressing Enter (Shift+Enter inserts before
+" the current line
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
+
 " Autorun vim-indent-guides on startup
 " disable by pressing <leader>ig
 autocmd VimEnter * IndentGuidesEnable

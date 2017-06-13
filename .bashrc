@@ -11,18 +11,18 @@ alias pcss="pacman -Ss"
 alias pcls="pacman -Qs"
 alias ls="ls --color=auto"
 alias config='/usr/bin/git --git-dir=/home/pabi/.cfg/ --work-tree=/home/pabi'
-# Use vim as your pager instead of less or more
+# Use vim as a pager 
 alias vless='vim -u /usr/share/vim/vim80/macros/less.vim'
 # Add vi-style bindings to bash
 # (insert mode default, escape for normal mode, no visual mode)
 set -o vi
 
 # Colorize bash prompt
-GREEN="\[$(tput setaf 11)\]"
+YELLOW="\[$(tput setaf 11)\]"
 RESET="\[$(tput sgr0)\]"
 PROMPT=$PS1
 
-export PS1="${GREEN}${PROMPT}${RESET}"
+export PS1="${YELLOW}${PROMPT}${RESET}"
 
 # Add magicmonty/bash-git-prompt for... git prompts
 GIT_PROMPT_ONLY_IN_REPO=1
@@ -39,6 +39,23 @@ eval "$(rbenv init -)"
 # Swaps two files
 function swap()         
 {
-    local TMPFILE=tmp.$$
-    mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE $2
+  local TMPFILE=tmp.$$
+  mv "$1" $TMPFILE && mv "$2" "$1" && mv $TMPFILE $2
+}
+
+# Create a new directory and enter it
+function mkd() {
+	mkdir -p "$@" && cd "$_";
+}
+
+# Add github and bitbucket remotes for the remote repository 
+# args: name of the remote repository
+function add-remotes()
+{
+  git remote add github "git@github.com:papapabi/${1}.git"
+  git remote add bitbucket "git@bitbucket.org:papapabi/${1}.git"
+  git remote add all "git@github.com:papapabi/${1}.git"
+  git remote set-url --push --add all "git@bitbucket.org:papapabi/${1}.git"
+  git remote set-url --push --add all "git@github.org:papapabi/${1}.gitl
+  git remote -v"
 }
