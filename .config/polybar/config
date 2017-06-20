@@ -381,7 +381,7 @@ interval = 1
 thermal-zone = 0
 warn-temperature = 70
 label = %temperature%
-label-warn = Careful, at  %temperature%!! 
+label-warn = %temperature% 
 label-warn-foreground = #ff5555
 
 ; vim:ft=dosini

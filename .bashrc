@@ -7,6 +7,7 @@
 setxkbmap -option caps:escape
 
 # Aliases
+alias cls='printf "\033c"'
 alias pcss="pacman -Ss"
 alias pcls="pacman -Qs"
 alias ls="ls --color=auto"
