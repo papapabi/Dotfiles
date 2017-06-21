@@ -13,6 +13,8 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+" CtrlP
+let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
 
 " Use vim-plug (junegunn/vim-plug) as the plugin manager
 " The string in single quotes is the directory for the plugins 
@@ -45,9 +47,11 @@ nmap <leader>T :enew<cr>
 
 " Move to the next buffer
 nmap <leader>l :bnext<CR>
+nmap <F8> :bnext<CR>
 
 " Move to the previous buffer
 nmap <leader>h :bprevious<CR>
+nmap <F7> :bprevious<CR>
 
 " Close the current buffer and move to the previous one
 " This replicates the idea of closing a tab
@@ -55,6 +59,9 @@ nmap <leader>bq :bp <BAR> bd #<CR>
 
 " Show all open buffers and their status
 nmap <leader>lb :ls<CR>
+
+" Add a bind for save all open buffers
+nmap <F9> :wa<CR>
 
 " Add bindings for selection/clipboard buffer copy-pasting
 noremap <Leader>Y "*y
@@ -70,7 +77,7 @@ nmap <leader>bs :CtrlPMRU<cr>
 
 " CtrlP show all files in a dir
 let g:ctrlp_max_files=0
-let g:ctrlp_max_depth=20
+let g:ctrlp_max_depth=40
 
 " Autorun vim-indent-guides on startup
 " disable by pressing <leader>ig
