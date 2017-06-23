@@ -28,6 +28,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'sheerun/vim-polyglot'
 Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-ragtag'
 
 call plug#end()
 
