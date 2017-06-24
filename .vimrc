@@ -5,6 +5,7 @@ set background=dark
 set ts=2 sw=2 et
 " So vim-airline appears all the time
 set laststatus=2
+" Add line numbers 
 set number
 " Automatically populates the g:airline_symbols dictionary with powerline
 " symbols
