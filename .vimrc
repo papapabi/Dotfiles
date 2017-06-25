@@ -7,6 +7,8 @@ set ts=2 sw=2 et
 set laststatus=2
 " Add line numbers 
 set number
+" Highlights all search results
+set hlsearch
 " Automatically populates the g:airline_symbols dictionary with powerline
 " symbols
 let g:airline_powerline_fonts = 1
