@@ -6,11 +6,30 @@
 # Remap caps to escape
 setxkbmap -option caps:escape
 
+# Case-insensitive globbing (used in pathname expansion)
+shopt -s nocaseglob;
+
+# Autocorrect typos in path names when using `cd`
+shopt -s cdspell;
+
+# Enable some Bash 4 features when possible:
+# * `autocd`, e.g. `**/qux` will enter `./foo/bar/baz/qux`
+# * Recursive globbing, e.g. `echo **/*.txt`
+for option in autocd globstar; do
+	shopt -s "$option" 2> /dev/null;
+done;
+
+# Use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+
 # Aliases
+alias cigrep='grep -nIi --color' # Case-insensitive grep
+alias recgrep='grep -rnIi --color'
 alias cls='printf "\033c"'
 alias pcss="pacman -Ss"
 alias pcls="pacman -Qs"
-alias ls="ls --color=auto"
+alias ls="ls --human-readable --color=auto"
 alias config='/usr/bin/git --git-dir=/home/pabi/.cfg/ --work-tree=/home/pabi'
 # Use vim as a pager 
 alias vless='vim -u /usr/share/vim/vim80/macros/less.vim'
