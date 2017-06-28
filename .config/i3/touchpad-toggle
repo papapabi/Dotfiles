@@ -1,0 +1,8 @@
+#!/bin/env bash
+id=$(xinput list | grep -i touchpad | xargs echo | cut -d ' ' -f 6 | sed 's/[^0-9]//g')
+current=$(xinput list-props "$id" | grep -i 'device enabled' | xargs echo | cut -d ' ' -f 4)
+if [ $current -eq 0 ] ; then
+    xinput --enable "ETPS/2 Elantech Touchpad"
+else
+    xinput --disable "ETPS/2 Elantech Touchpad"
+fi
