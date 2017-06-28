@@ -48,7 +48,13 @@ export PS1="${YELLOW}${PROMPT}${RESET}"
 GIT_PROMPT_ONLY_IN_REPO=1
 # Remove leading checkmark; the exit state of the last command
 GIT_PROMPT_THEME=Default_NoExitState_Ubuntu
-source ~/.bash-git-prompt/gitprompt.sh
+. ~/.bash-git-prompt/gitprompt.sh
+
+# From git/contrib/completion/
+# Use git-completion, when available
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
 
 # Add rbenv to path
 export PATH="$HOME/.rbenv/bin:$PATH"
