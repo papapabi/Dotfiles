@@ -5,8 +5,9 @@ set background=dark
 set ts=2 sw=2 et
 " So vim-airline appears all the time
 set laststatus=2
-" Add line numbers 
+" Line number at the current line, relative numbers elsewhere
 set number
+set relativenumber
 " Highlights all search results
 set hlsearch
 " Automatically populates the g:airline_symbols dictionary with powerline
