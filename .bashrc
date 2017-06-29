@@ -24,12 +24,14 @@ done;
     . /usr/share/bash-completion/bash_completion
 
 # Aliases
-alias cigrep='grep -nIi --color' # Case-insensitive grep
+# for native outputs, use /bin/<prog-name>
+alias grep='grep --color'
+alias mygrep='grep -nIi --color' # Case-insensitive grep
 alias recgrep='grep -rnIi --color'
 alias cls='printf "\033c"'
 alias pcss="pacman -Ss"
 alias pcls="pacman -Qs"
-alias ls="ls --human-readable --color=auto"
+alias ls="ls --classify --human-readable --color=auto --group-directories-first"
 alias config='/usr/bin/git --git-dir=/home/pabi/.cfg/ --work-tree=/home/pabi'
 # Use vim as a pager 
 alias vless='vim -u /usr/share/vim/vim80/macros/less.vim'
