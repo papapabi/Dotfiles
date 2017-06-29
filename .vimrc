@@ -33,6 +33,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'sheerun/vim-polyglot'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-ragtag'
+Plug 'francoiscabrol/ranger.vim'
 
 call plug#end()
 
@@ -45,6 +46,9 @@ nmap <CR> o<Esc>
 " This allows buffers to be hidden if you've modified a buffer.
 " This is almost a must if you wish to use buffers in this way.
 set hidden
+
+" Close buffer
+nmap <F6> :bd<CR>
 
 " To open a new empty buffer
 " This replaces :tabnew which I used to bind to this mapping
