@@ -60,6 +60,16 @@ Plug 'francoiscabrol/ranger.vim'
 
 call plug#end()
 
+" Disable arrow keys for now to force hjkl movement
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+inoremap <left> <nop>
+inoremap <right> <nop>
+
 " Insert newline after cur line by pressing Enter (Shift+Enter inserts before
 " the current line
 nmap <S-Enter> O<Esc>
