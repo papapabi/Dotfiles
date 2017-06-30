@@ -13,6 +13,9 @@ set undofile
 set ts=2 sw=2 et
 " Highlights all search results
 set hlsearch
+" Enhanced command-line completion
+set wildmenu
+set wildmode=longest:full,full
 
 syntax enable
 colorscheme gruvbox
