@@ -16,6 +16,10 @@ set hlsearch
 " Enhanced command-line completion
 set wildmenu
 set wildmode=longest:full,full
+set ignorecase
+set smartcase
+set showmatch
+set hlsearch
 
 " Change the leader key to spacebar
 noremap <Space> <Nop>
@@ -103,6 +107,9 @@ nmap <leader>bf :CtrlP<cr>
 nmap <leader>bb :CtrlPBuffer<cr>
 nmap <leader>bm :CtrlPMixed<cr>
 nmap <leader>bs :CtrlPMRU<cr>
+
+" % to match do/end combos and others in ruby files
+runtime macros/matchit.vim
 
 " CtrlP show all files in a dir
 let g:ctrlp_max_files=0
