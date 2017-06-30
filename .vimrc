@@ -70,6 +70,14 @@ inoremap <down> <nop>
 inoremap <left> <nop>
 inoremap <right> <nop>
 
+" Move by screen line instead of file line
+nnoremap j gj
+nnoremap k gk
+
+" Tab to move around matching bracket pairs in normal/visual mode
+nnoremap <tab> %
+vnoremap <tab> %
+
 " Insert newline after cur line by pressing Enter (Shift+Enter inserts before
 " the current line
 nmap <S-Enter> O<Esc>
