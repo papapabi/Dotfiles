@@ -23,6 +23,10 @@ done;
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
 
+# Case-insensitive tab completion
+bind "set completion-ignore-case on"
+bind "set show-all-if-ambiguous on"
+
 # Aliases
 # for native outputs, use /bin/<prog-name>
 alias grep='grep --color'
