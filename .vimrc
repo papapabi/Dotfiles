@@ -17,6 +17,10 @@ set hlsearch
 set wildmenu
 set wildmode=longest:full,full
 
+" Change the leader key to spacebar
+noremap <Space> <Nop>
+let mapleader="\<Space>"
+
 syntax enable
 colorscheme gruvbox
 set background=dark
