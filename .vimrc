@@ -1,15 +1,22 @@
-syntax enable
-colorscheme gruvbox
-set background=dark
-" For vim-indent-guides
-set ts=2 sw=2 et
+" Sane defaults 
+set nocompatible
+set modelines=0
+set encoding=utf-8
+set ttyfast
 " So vim-airline appears all the time
 set laststatus=2
 " Line number at the current line, relative numbers elsewhere
 set number
-set relativenumber
+set relativenumber  
+set undofile
+" For vim-indent-guides
+set ts=2 sw=2 et
 " Highlights all search results
 set hlsearch
+
+syntax enable
+colorscheme gruvbox
+set background=dark
 " Automatically populates the g:airline_symbols dictionary with powerline
 " symbols
 let g:airline_powerline_fonts = 1
@@ -19,6 +26,11 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#fnamemod = ':t'
 " CtrlP
 let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
+" Remap ranger.vim from <leader>f to -
+let g:ranger_map_keys = 0
+
+" Highlights characters beyond column 80
+match ErrorMsg '\%>80v.\+'
 
 " Use vim-plug (junegunn/vim-plug) as the plugin manager
 " The string in single quotes is the directory for the plugins 
@@ -47,11 +59,13 @@ nmap <CR> o<Esc>
 " This is almost a must if you wish to use buffers in this way.
 set hidden
 
-" Close buffer
+" Ranger.vim mapping
+nmap - :Ranger<CR> 
+
+" Close current buffer
 nmap <F6> :bd<CR>
 
-" To open a new empty buffer
-" This replaces :tabnew which I used to bind to this mapping
+" Open a new empty buffer
 nmap <leader>T :enew<cr>
 
 " Move to the next buffer
@@ -63,7 +77,6 @@ nmap <leader>h :bprevious<CR>
 nmap <F7> :bprevious<CR>
 
 " Close the current buffer and move to the previous one
-" This replicates the idea of closing a tab
 nmap <leader>bq :bp <BAR> bd #<CR>
 
 " Show all open buffers and their status
