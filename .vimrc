@@ -8,7 +8,6 @@ set laststatus=2
 " Line number at the current line, relative numbers elsewhere
 set number
 set relativenumber  
-set undofile
 " For vim-indent-guides
 set ts=2 sw=2 et
 " Highlights all search results
@@ -24,6 +23,18 @@ set hlsearch
 " Change the leader key to spacebar
 noremap <Space> <Nop>
 let mapleader="\<Space>"
+
+" TODO: add cleanup task to crontab
+" Place all .un~ (vim undo) files in one centralized dir
+if !isdirectory($HOME."/.vim")
+  " full permissions for owner, no permissions for everyone else
+  call mkdir($HOME."/.vim", "", 0770)
+endif
+if !isdirectory($HOME."/.vim/undo-dir")
+  call mkdir($HOME."/.vim/undo-dir", "", 0770)
+endif
+set undodir=~/.vim/undo-dir
+set undofile
 
 syntax enable
 colorscheme gruvbox
