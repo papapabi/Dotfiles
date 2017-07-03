@@ -184,7 +184,7 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86TouchpadToggle exec $HOME/.config/i3/touchpad-toggle
 
 # Screenshot toggles
-bindsym --release Print exec --no-startup-id maim -m 10 -u ~/Pictures/screenshots/$(date +%F)-maim.png 
+bindsym --release Print exec --no-startup-id maim -m 10 -u ~/data/Pictures/screenshots/$(date +%F)-maim.png 
 bindsym --release Shift+Print exec --no-startup-id  maim -s | xclip -selection clipboard -t image/png
 bindsym --release $mod+Shift+Print exec --no-startup-id maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
 
