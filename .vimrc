@@ -68,6 +68,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-ragtag'
 Plug 'francoiscabrol/ranger.vim'
+Plug 'dkarter/bullets.vim'
 
 call plug#end()
 
