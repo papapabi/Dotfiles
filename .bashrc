@@ -23,19 +23,31 @@ done;
 [[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
     . /usr/share/bash-completion/bash_completion
 
-# Case-insensitive tab completion
+# Case-insensitive tab completion, love this
 bind "set completion-ignore-case on"
 bind "set show-all-if-ambiguous on"
 
 # Aliases
-# for native outputs, use /bin/<prog-name>
+# NOTE: for native outputs, use /usr/bin/*
+alias ls='ls --classify --human-readable --color=auto' # Default ls
+alias lx='ls -lXB'                                     # Sort by extension.
+alias ll='ls -lv --group-directories-first' # Long-list, natural number sort
+alias lm='ll | more'
+alias la='ll -A'                                       # All except . and ..
+alias tree='tree -Csuh'                                # A better recursive ls
+# Prompt before doing dangerous ops
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+# Prevent accidental file clobbering
+alias mkdir='mkdir -p'
+alias h='history'
 alias grep='grep --color'
 alias mygrep='grep -nIi --color' # Case-insensitive grep
 alias recgrep='grep -rnIi --color'
 alias cls='printf "\033c"'
-alias pcss="pacman -Ss"
-alias pcls="pacman -Qs"
-alias ls="ls --classify --human-readable --color=auto --group-directories-first"
+alias pcss='pacman -Ss'
+alias pcls='pacman -Qs'
 alias config='/usr/bin/git --git-dir=/home/pabi/.cfg/ --work-tree=/home/pabi'
 # Use vim as a pager 
 alias vless='vim -u /usr/share/vim/vim80/macros/less.vim'
@@ -100,17 +112,12 @@ function clear-remotes()
   git remote rm all
 }
 
-# Eternal bash history.
-# ---------------------
+# Eternal bash history
 # Undocumented feature which sets the size to "unlimited".
-# http://stackoverflow.com/questions/9457233/unlimited-bash-history
 export HISTFILESIZE=
 export HISTSIZE=
 export HISTTIMEFORMAT="[%F %T] "
-# Change the file location because certain bash sessions truncate .bash_history
-# file upon close.
-# http://superuser.com/questions/575479/bash-history-truncated-to-500-lines-on-each-login
 export HISTFILE="/home/$USER/.bash_eternal_history"
+
 # Force prompt to write history after every command.
-# http://superuser.com/questions/20900/bash-history-loss
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
