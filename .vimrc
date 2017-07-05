@@ -19,6 +19,8 @@ set ignorecase
 set smartcase
 set showmatch
 set hlsearch
+" instantaneous statusline mode switch
+set ttimeoutlen=50
 
 " Change the leader key to spacebar
 noremap <Space> <Nop>
