@@ -69,6 +69,7 @@ Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-ragtag'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'dkarter/bullets.vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 call plug#end()
 
