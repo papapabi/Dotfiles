@@ -70,6 +70,7 @@ Plug 'tpope/vim-ragtag'
 Plug 'francoiscabrol/ranger.vim'
 Plug 'dkarter/bullets.vim'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'edkolev/tmuxline.vim'
 
 call plug#end()
 
