@@ -20,7 +20,8 @@ set smartcase
 set showmatch
 set hlsearch
 " instantaneous statusline mode switch
-set ttimeoutlen=50
+set timeoutlen=1000
+set ttimeoutlen=10
 
 " Change the leader key to spacebar
 noremap <Space> <Nop>
@@ -148,6 +149,16 @@ runtime macros/matchit.vim
 " CtrlP show all files in a dir
 let g:ctrlp_max_files=0
 let g:ctrlp_max_depth=40
+
+" tmux statusline config
+let g:tmuxline_preset = {
+      \'a'    : '#S',
+      \'b'    : '#W', 
+      \'win'  : ['#I', '#W'],
+      \'cwin' : ['#I', '#W', '#F'],
+      \'x'    : '#(echo -n "uptime " ; uptime | xargs | cut -d " " -f 3 | sed "s/.$//")',
+      \'y'    : '#(date +"%A %B %d %R %:::z %Y")',
+      \'z'    : ['#(whoami)', '#H']}
 
 " Autorun vim-indent-guides on startup
 " disable by pressing <leader>ig
