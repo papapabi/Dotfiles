@@ -54,6 +54,20 @@ let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
 " Remap ranger.vim from <leader>f to -
 let g:ranger_map_keys = 0
 
+
+" nerdcommenter settings
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+
 " Highlights characters beyond column 80
 match ErrorMsg '\%>80v.\+'
 
@@ -74,6 +88,7 @@ Plug 'francoiscabrol/ranger.vim'
 Plug 'dkarter/bullets.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'edkolev/tmuxline.vim'
+Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 
