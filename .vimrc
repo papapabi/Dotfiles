@@ -89,6 +89,7 @@ Plug 'dkarter/bullets.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'edkolev/tmuxline.vim'
 Plug 'scrooloose/nerdcommenter'
+Plug 'Valloric/YouCompleteMe'
 
 call plug#end()
 
