@@ -92,7 +92,8 @@ function mkd() {
 	mkdir -p "$@" && cd "$_";
 }
 
-# Add github and bitbucket remotes for the remote repository 
+# Add github and bitbucket remotes for the remote repository, with github as
+# the primary fetch target for remote 'all'.
 # args: name of the remote repository
 function add-remotes()
 {
@@ -100,7 +101,7 @@ function add-remotes()
   git remote add bitbucket "git@bitbucket.org:papapabi/${1}.git"
   git remote add all "git@github.com:papapabi/${1}.git"
   git remote set-url --push --add all "git@bitbucket.org:papapabi/${1}.git"
-  git remote set-url --push --add all "git@github.org:papapabi/${1}.git"
+  git remote set-url --push --add all "git@github.com:papapabi/${1}.git"
   git remote -v
 }
 
