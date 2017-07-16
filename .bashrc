@@ -74,8 +74,14 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
+# Add exercism to path
+export PATH=$HOME/dev/exercism:$PATH
 # Add rbenv to path
 export PATH="$HOME/.rbenv/bin:$PATH"
+
+if [ -f ~/.config/exercism/exercism_completion.bash ]; then
+  . ~/.config/exercism/exercism_completion.bash
+fi
 
 # Load rbenv automatically by appending
 eval "$(rbenv init -)"
