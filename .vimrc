@@ -22,6 +22,8 @@ set hlsearch
 " instantaneous statusline mode switch
 set timeoutlen=1000
 set ttimeoutlen=10
+set autoindent
+filetype plugin indent on
 
 " Change the leader key to spacebar
 noremap <Space> <Nop>
