@@ -96,6 +96,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'scrooloose/nerdcommenter'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-rails'
 
 call plug#end()
 
