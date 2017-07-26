@@ -70,6 +70,9 @@ let g:NERDCommentEmptyLines = 1
 " Enable trimming of trailing whitespace when uncommenting
 let g:NERDTrimTrailingWhitespace = 1
 
+" YCM python interpreter
+let g:ycm_server_python_interpreter = '/usr/bin/python2'
+
 " Highlights characters beyond column 80
 match ErrorMsg '\%>80v.\+'
 
