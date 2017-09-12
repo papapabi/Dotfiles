@@ -97,6 +97,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
+Plug 'lervag/vimtex'
 
 call plug#end()
 
