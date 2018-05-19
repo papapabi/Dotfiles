@@ -98,6 +98,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-rails'
 Plug 'lervag/vimtex'
+Plug 'mattn/emmet-vim'
 
 call plug#end()
 
