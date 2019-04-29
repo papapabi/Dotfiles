@@ -16,7 +16,7 @@ set $mod Mod1
 font pango:monospace 9
 
 # thin borders
-hide_edge_borders both
+# hide_edge_borders both
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -164,6 +164,7 @@ new_float normal
 bindsym $mod+Shift+n border normal
 bindsym $mod+Shift+t border pixel 2
 
+
 set $bg-color            #2f343f
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
@@ -172,8 +173,10 @@ set $urgent-bg-color     #e53935
 set $indicator-color     #a0a0a0
 
 # set window colors
-#                       border             background         text                 indicator
-client.focused          $bg-color          $bg-color          $text-color          $indicator-color
+#                       border             background         text                 indicator         child_border
+
+#ff5555 #ff5555 #ffffff #ff5555   #ff5555
+client.focused          #ff5555            #ff5555            #ffffff              #ff5555           #ff5555
 client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator-color
 client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color $indicator-color
 client.urgent           $urgent-bg-color   $urgent-bg-color   $text-color          $indicator-color
@@ -237,7 +240,7 @@ bindsym $mod+m exec "/usr/local/bin/switch-audio-port"
 
 # Autostart apps
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-#exec --no-startup-id "compton -cC"
+exec --no-startup-id "compton -cC"
 exec --no-startup-id nm-applet
 exec --no-startup-id "nitrogen --restore"
 exec --no-startup-id "sleep 2s && kalu"
