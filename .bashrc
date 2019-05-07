@@ -74,18 +74,6 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-# Add exercism to path
-export PATH=$HOME/dev/exercism:$PATH
-# Add rbenv to path
-export PATH="$HOME/.rbenv/bin:$PATH"
-
-if [ -f ~/.config/exercism/exercism_completion.bash ]; then
-  . ~/.config/exercism/exercism_completion.bash
-fi
-
-# Load rbenv automatically by appending
-eval "$(rbenv init -)"
-
 # Swaps two files
 function swap()         
 {
@@ -111,11 +99,31 @@ function add-remotes()
   git remote -v
 }
 
+function add-remotes-with-work()
+{
+  git remote add github "git@github.com:papapabi/${1}.git"
+  git remote add bitbucket "git@bitbucket.org:papapabi/${1}.git"
+  git remote add work "git@bitbucket.org-work:innovantage/${1}.git"
+  git remote add all "git@github.com:papapabi/${1}.git"
+  git remote set-url --push --add all "git@bitbucket.org-work:innovantage/${1}.git"
+  git remote set-url --push --add all "git@bitbucket.org:papapabi/${1}.git"
+  git remote set-url --push --add all "git@github.com:papapabi/${1}.git"
+  git remote -v
+}
+
 # Clear remotes
 function clear-remotes()
 {
   git remote rm github
   git remote rm bitbucket
+  git remote rm all
+}
+
+function clear-remotes-with-work()
+{
+  git remote rm github
+  git remote rm bitbucket
+  git remote rm work
   git remote rm all
 }
 
