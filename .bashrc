@@ -134,5 +134,8 @@ export HISTSIZE=
 export HISTTIMEFORMAT="[%F %T] "
 export HISTFILE="/home/$USER/.bash_eternal_history"
 
+# Make python avoid writing bytecode
+export PYTHONDONTWRITEBYTECODE="dont_write"
+
 # Force prompt to write history after every command.
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
