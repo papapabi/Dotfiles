@@ -83,9 +83,6 @@ if [ -f ~/.config/exercism/exercism_completion.bash ]; then
   . ~/.config/exercism/exercism_completion.bash
 fi
 
-# Load rbenv automatically by appending
-eval "$(rbenv init -)"
-
 # Swaps two files
 function swap()         
 {
