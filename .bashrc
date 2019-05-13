@@ -74,15 +74,6 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
-# Add exercism to path
-export PATH=$HOME/dev/exercism:$PATH
-# Add rbenv to path
-export PATH="$HOME/.rbenv/bin:$PATH"
-
-if [ -f ~/.config/exercism/exercism_completion.bash ]; then
-  . ~/.config/exercism/exercism_completion.bash
-fi
-
 # Swaps two files
 function swap()         
 {
@@ -122,6 +113,9 @@ export HISTFILESIZE=
 export HISTSIZE=
 export HISTTIMEFORMAT="[%F %T] "
 export HISTFILE="/home/$USER/.bash_eternal_history"
+
+# Make python avoid writing bytecode
+export PYTHONDONTWRITEBYTECODE="dont_write"
 
 # Force prompt to write history after every command.
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
