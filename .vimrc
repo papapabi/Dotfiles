@@ -60,6 +60,7 @@ set undofile
 syntax enable
 colorscheme gruvbox
 set background=dark
+let g:airline_theme='gruvbox'
 
 " Automatically populates the g:airline_symbols dictionary with powerline
 " symbols
@@ -73,6 +74,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 "let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
 " Remap ranger.vim from <leader>f to -
 "let g:ranger_map_keys = 0
+
 
 
 " nerdcommenter settings
