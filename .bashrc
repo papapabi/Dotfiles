@@ -99,31 +99,11 @@ function add-remotes()
   git remote -v
 }
 
-function add-remotes-with-work()
-{
-  git remote add github "git@github.com:papapabi/${1}.git"
-  git remote add bitbucket "git@bitbucket.org:papapabi/${1}.git"
-  git remote add work "git@bitbucket.org-work:innovantage/${1}.git"
-  git remote add all "git@github.com:papapabi/${1}.git"
-  git remote set-url --push --add all "git@bitbucket.org-work:innovantage/${1}.git"
-  git remote set-url --push --add all "git@bitbucket.org:papapabi/${1}.git"
-  git remote set-url --push --add all "git@github.com:papapabi/${1}.git"
-  git remote -v
-}
-
 # Clear remotes
 function clear-remotes()
 {
   git remote rm github
   git remote rm bitbucket
-  git remote rm all
-}
-
-function clear-remotes-with-work()
-{
-  git remote rm github
-  git remote rm bitbucket
-  git remote rm work
   git remote rm all
 }
 

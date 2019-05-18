@@ -1,8 +1,25 @@
 " Sane defaults 
+
+" Enter the current millenium
 set nocompatible
-set modelines=0
-set encoding=utf-8
 set ttyfast
+
+" Recursively search down your dirs (so long as you're in the project's root)
+" Also provides tab completion for all file-related tasks (:sp, :find, :vsp ,
+" etc)
+set path+=**
+
+" Display all matching files when doing tab completion
+set wildmenu
+set wildmode=longest:full,full
+
+" Create the `tags` file (may need to install ctags first)
+command MakeTags !ctags -R . 
+
+" No lines are checked for set commands
+set modelines=0
+" Change output encoding *shown* in the terminal, not the output of a file
+set encoding=utf-8
 " So vim-airline appears all the time
 set laststatus=2
 " Line number at the current line, relative numbers elsewhere
@@ -12,10 +29,9 @@ set relativenumber
 set ts=2 sw=2 et
 " Highlights all search results
 set hlsearch
-" Enhanced command-line completion
-set wildmenu
-set wildmode=longest:full,full
+" Ignore case in search patterns
 set ignorecase
+" Overrides the 'ignorecase' option if the search pattern contains upper chars
 set smartcase
 set showmatch
 set hlsearch
@@ -54,12 +70,10 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 " Show just the filename
 let g:airline#extensions#tabline#fnamemod = ':t'
+
 " CtrlP
-let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
+"let g:ctrlp_match_window = 'results:100' " overcome limit imposed by max height
 " Remap ranger.vim from <leader>f to -
-let g:ranger_map_keys = 0
-
-
 
 " nerdcommenter settings
 " Add spaces after comment delimiters by default
@@ -75,7 +89,7 @@ let g:NERDCommentEmptyLines = 1
 let g:NERDTrimTrailingWhitespace = 1
 
 " YCM python interpreter
-let g:ycm_server_python_interpreter = '/usr/bin/python2'
+"let g:ycm_server_python_interpreter = '/usr/bin/python2'
 
 " Highlights characters beyond column 80
 match ErrorMsg '\%>80v.\+'
@@ -90,17 +104,18 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'easymotion/vim-easymotion'
 Plug 'nathanaelkane/vim-indent-guides'
+Plug 'tpope/vim-vinegar'
 Plug 'sheerun/vim-polyglot'
-Plug 'kien/ctrlp.vim'
-Plug 'tpope/vim-ragtag'
-Plug 'francoiscabrol/ranger.vim'
+"Plug 'kien/ctrlp.vim'
+"Plug 'tpope/vim-ragtag'
+"Plug 'francoiscabrol/ranger.vim'
 Plug 'dkarter/bullets.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'edkolev/tmuxline.vim'
 Plug 'scrooloose/nerdcommenter'
 "Plug 'Valloric/YouCompleteMe'
 Plug 'tpope/vim-surround'
-Plug 'tpope/vim-rails'
+"Plug 'tpope/vim-rails'
 Plug 'lervag/vimtex'
 Plug 'mattn/emmet-vim'
 
@@ -117,6 +132,7 @@ inoremap <left> <nop>
 inoremap <right> <nop>
 
 " Move by screen line instead of file line
+" Useful when lines are wrapped on the screen
 nnoremap j gj
 nnoremap k gk
 
@@ -124,18 +140,13 @@ nnoremap k gk
 nnoremap <tab> %
 vnoremap <tab> %
 
-" Insert newline after cur line by pressing Enter (Shift+Enter inserts before
-" the current line
-nmap <S-Enter> O<Esc>
-nmap <CR> o<Esc>
-
 " Add shortcuts for easy buffer navigation
 " This allows buffers to be hidden if you've modified a buffer.
 " This is almost a must if you wish to use buffers in this way.
 set hidden
 
 " Ranger.vim mapping
-nmap - :Ranger<CR> 
+"nmap - :Ranger<CR> 
 
 " Close current buffer
 nmap <F6> :bd<CR>
@@ -144,11 +155,11 @@ nmap <F6> :bd<CR>
 nmap <leader>T :enew<cr>
 
 " Move to the next buffer
-nmap <leader>l :bnext<CR>
+"nmap <leader>l :bnext<CR>
 nmap <F8> :bnext<CR>
 
 " Move to the previous buffer
-nmap <leader>h :bprevious<CR>
+"nmap <leader>h :bprevious<CR>
 nmap <F7> :bprevious<CR>
 
 " Close the current buffer and move to the previous one
@@ -167,17 +178,17 @@ noremap <Leader>y "+y
 noremap <Leader>p "+p
 
 " CtrlP keybinds
-nmap <leader>bf :CtrlP<cr>
-nmap <leader>bb :CtrlPBuffer<cr>
-nmap <leader>bm :CtrlPMixed<cr>
-nmap <leader>bs :CtrlPMRU<cr>
+"nmap <leader>bf :CtrlP<cr>
+"nmap <leader>bb :CtrlPBuffer<cr>
+"nmap <leader>bm :CtrlPMixed<cr>
+"nmap <leader>bs :CtrlPMRU<cr>
 
 " % to match do/end combos and others in ruby files
-runtime macros/matchit.vim
+" runtime macros/matchit.vim
 
 " CtrlP show all files in a dir
-let g:ctrlp_max_files=0
-let g:ctrlp_max_depth=40
+" let g:ctrlp_max_files=0
+" let g:ctrlp_max_depth=40
 
 " tmux statusline config
 let g:tmuxline_preset = {
