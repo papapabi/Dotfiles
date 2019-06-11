@@ -231,6 +231,12 @@ bindsym $mod+F6 exec mocp --stop
 bindsym $mod+F7 exec mocp --previous
 bindsym $mod+F8 exec mocp --next
 
+
+# Screenshot toggles
+bindsym --release Print exec --no-startup-id maim -m 10 -u ~/data/Pictures/screenshots/$(date +%F)-maim.png
+bindsym --release Shift+Print exec --no-startup-id  maim -s | xclip -selection clipboard -t image/png
+bindsym --release $mod+Shift+Print exec --no-startup-id maim -i $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+
 # App shortcuts
 bindsym $mod+w exec "/usr/bin/chromium"
 bindsym $mod+n exec "/usr/bin/thunar"
