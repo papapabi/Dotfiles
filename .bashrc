@@ -144,3 +144,9 @@ export PYTHONDONTWRITEBYTECODE="dont_write"
 
 # Force prompt to write history after every command.
 PROMPT_COMMAND="history -a; $PROMPT_COMMAND"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/pabi/builds/google-cloud-sdk/path.bash.inc' ]; then . '/home/pabi/builds/google-cloud-sdk/path.bash.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/pabi/builds/google-cloud-sdk/completion.bash.inc' ]; then . '/home/pabi/builds/google-cloud-sdk/completion.bash.inc'; fi
