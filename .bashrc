@@ -150,3 +150,13 @@ if [ -f '/home/pabi/builds/google-cloud-sdk/path.bash.inc' ]; then . '/home/pabi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/pabi/builds/google-cloud-sdk/completion.bash.inc' ]; then . '/home/pabi/builds/google-cloud-sdk/completion.bash.inc'; fi
+
+# pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+# pyenv auto activate virtualenv
+eval "$(pyenv virtualenv-init -)"
